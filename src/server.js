@@ -35,5 +35,8 @@ app.get('/usuarios/:id', (req, res) => {
   res.json(usuario);
 });
 
+app.use((req, res) => {
+  res.status(404).send('No se ha encontrado la ruta ingresada.');
+});
 
 module.exports = app;
